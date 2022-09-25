@@ -149,7 +149,9 @@ class HomeController extends Controller
 
         $cart = Cart::where('phone', $user->phone)->get();
 
-        return view('user.showcart', compact('count', 'cart'));
+        $title = "Sellfish - Carts";
+
+        return view('user.showcart', compact('count', 'cart', 'title'));
     }
 
     public function viewproducts()
@@ -162,7 +164,7 @@ class HomeController extends Controller
 
             $count = Cart::where('phone', $user->phone)->count();
 
-            $title = 'Products - SeaShrimps';
+            $title = 'Sellfish - Products';
 
             return view('user.viewproducts', compact('data', 'count', 'title'));
         }
@@ -170,7 +172,7 @@ class HomeController extends Controller
         {
             $data = Product::all();
 
-            $title = 'Products - SeaShrimps';
+            $title = 'Sellfish - Products';
 
             return view('user.viewproducts', compact('data', 'title'));
         }     

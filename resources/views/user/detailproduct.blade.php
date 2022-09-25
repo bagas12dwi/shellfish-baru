@@ -9,50 +9,7 @@
 
   <body>
 
-    <nav class="navbar navbar-expand-lg bg-light">
-        <div class="container">
-          <a class="navbar-brand" href="index.html"><img src="assets/images/logo.png" alt=""></a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="/">Home
-                </a>
-              </li> 
-              <li class="nav-item">
-                <a class="nav-link" href="{{ url('viewproducts') }}">Our Products</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{{ url('about') }}">About Us</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{{ url('contact') }}">Contact Us</a>
-              </li>
-              <li class="nav-item">
-              @if (Route::has('login'))
-                        @auth
-                          <li class="nav-item">
-                            <a class="nav-link" href="{{ url('showcart') }}"><i class="fas fa-shopping-cart"></i>[{{ $count }}]</a>
-                          </li>
-                            <x-app-layout>
-
-                            </x-app-layout>
-                        @else
-                            <li><a href="{{ route('login') }}" class="nav-link">Log in</a></li>
-
-                            @if (Route::has('register'))
-                                <li><a href="{{ route('register') }}" class="nav-link">Register</a></li>
-                            @endif
-                        @endauth
-                    </div>
-                @endif
-              </li>
-            </ul>
-          </div>
-        </div>
-    </nav>
+    @include('user.components.navbar')
 
     <div class="container mt-5">
         <div class="row justify-content-center mb-5">
