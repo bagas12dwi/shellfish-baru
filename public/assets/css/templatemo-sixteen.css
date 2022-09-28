@@ -112,15 +112,15 @@ a.filled-button:hover {
 }
 
 .products-heading {
-    background-image: url(../images/products-heading.jpg);
+    background-image: url(../images/hero.png);
 }
 
 .about-heading {
-    background-image: url(../images/about-heading.jpg);
+    background-image: url(../images/hero.png);
 }
 
 .contact-heading {
-    background-image: url(../images/contact-heading.jpg);
+    background-image: url(../images/hero.png);
 }
 
 .page-heading {

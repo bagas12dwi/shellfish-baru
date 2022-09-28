@@ -17,8 +17,8 @@
         <div class="row">
           <div class="col-md-12">
             <div class="text-content">
-              <h4>Produk Kami</h4>
-              <h2>Dapatkan Ikan Dan Udang Segar Disini</h2>
+              <h2>Shellfish</h2>
+              <h2>Products</h2>
             </div>
           </div>
         </div>
