@@ -14,25 +14,12 @@
     <!-- Page Content -->
     <!-- Banner Starts Here -->
     <div class="banner header-text">
-      <div class="owl-banner owl-carousel">
         <div class="banner-item-01">
-          <div class="text-content">
-            <h4>Best Offer</h4>
-            <h2>New Arrivals On Sale</h2>
-          </div>
+            <div class="text-content">
+              <h2 class="text-uppercase fw-bold">Sellfish</h2>
+              <h4>Dapatkan produk ikan, kerang-kerangan, udang, oyster, kepiting & lobster secara segar langsung dari nelayan lokal</h4>
+              <a href="{{ url('viewproducts') }}" class="btn btn-dark p-3 mt-3">Belanja Sekarang</a>
+            </div>
         </div>
-        <div class="banner-item-02">
-          <div class="text-content">
-            <h4>Flash Deals</h4>
-            <h2>Get your best products</h2>
-          </div>
-        </div>
-        <div class="banner-item-03">
-          <div class="text-content">
-            <h4>Last Minute</h4>
-            <h2>Grab last minute deals</h2>
-          </div>
-        </div>
-      </div>
     </div>
     <!-- Banner Ends Here -->

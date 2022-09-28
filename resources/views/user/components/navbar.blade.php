@@ -1,4 +1,4 @@
-<header class="">
+<header>
     <nav class="navbar navbar-expand-lg bg-light">
       <div class="container">
         <a class="navbar-brand fw-bold align-items-center" href="index.html">SHELLFISH</a>
@@ -27,17 +27,13 @@
                               <li class="nav-item">
                                 <form class="d-flex " role="search">
                                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                                    <button class="btn btn-outline-success" type="submit">Search</button>
+                                    <button class="btn btn-outline-dark" type="submit">Search</button>
                                   </form>
                               </li>
-                                <li class="nav-item">
-                                  {{-- <a class="nav-link" href="{{ url('showcart') }}"><i class="fas fa-shopping-cart"></i><span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                                    {{ $count }}
-                                    <span class="visually-hidden">unread messages</span>
-                                </span></a> --}}
+                                <li class="nav-item"> 
                                 <a class="btn position-relative" href="{{ url('showcart') }}">
                                     <i class="fas fa-shopping-cart"></i>
-                                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary">
                                         {{$count}}
                                         <span class="visually-hidden">unread messages</span>
                                       </span>

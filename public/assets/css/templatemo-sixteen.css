@@ -28,6 +28,24 @@ ul {
     list-style: none;
 }
 
+.services-sell {
+    margin-top: 40px;
+    align-items: center;
+  }
+  
+  .shipping {
+    background-color: #47B5FF;
+    height: 80px;
+    width: 80px;
+    padding: 25px;
+    margin-bottom: 20px;
+  }
+  
+  .shipping:hover {
+    background-color: #0874bb;
+  }
+  
+
 h1,
 h2,
 h3,
@@ -213,7 +231,6 @@ header {
     z-index: 99999;
     width: 100%;
     height: 80px;
-    background-color: #232323;
     -webkit-transition: all 0.3s ease-in-out 0s;
     -moz-transition: all 0.3s ease-in-out 0s;
     -o-transition: all 0.3s ease-in-out 0s;
@@ -236,13 +253,6 @@ header .navbar {
 }
 .background-header .navbar-nav a.nav-link {
     color: #1e1e1e !important;
-}
-.background-header .navbar-nav .nav-link:hover,
-.background-header .navbar-nav .active > .nav-link,
-.background-header .navbar-nav .nav-link.active,
-.background-header .navbar-nav .nav-link.show,
-.background-header .navbar-nav .show > .nav-link {
-    color: #f33f3f !important;
 }
 .navbar .navbar-brand {
     float: left;
@@ -315,7 +325,7 @@ header .navbar {
 
 .banner-item-01 {
     padding: 300px 0px;
-    background-image: url(../images/slide_01.jpg);
+    background-image: url(../images/hero.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -350,10 +360,8 @@ header .navbar {
 }
 
 .banner .text-content h4 {
-    color: #f33f3f;
+    color: #ffffff;
     font-size: 22px;
-    text-transform: uppercase;
-    font-weight: 700;
     margin-bottom: 15px;
 }
 
@@ -428,21 +436,10 @@ header .navbar {
 
 .product-item .down-content h4 {
     font-size: 17px;
-    color: #1a6692;
-    margin-bottom: 20px;
+    color: #252525;
+    font-weight: bold;
 }
 
-.product-item .down-content h6 {
-    position: absolute;
-    top: 30px;
-    right: 30px;
-    font-size: 18px;
-    color: #121212;
-}
-
-.product-item .down-content p {
-    margin-bottom: 20px;
-}
 
 .product-item .down-content ul li {
     display: inline-block;
@@ -458,7 +455,6 @@ header .navbar {
     right: 30px;
     bottom: 30px;
     font-size: 13px;
-    color: #f33f3f;
     font-weight: 500;
 }
 
@@ -765,9 +761,6 @@ footer .inner-content p a {
     margin-bottom: 20px;
 }
 
-.services .service-item .down-content p {
-    margin-bottom: 25px;
-}
 
 /* Clients */
 
@@ -935,14 +928,9 @@ footer .inner-content p a {
         display: block;
         margin-bottom: 20px;
     }
-    .product-item .down-content h4 {
+    /* .product-item .down-content h4 {
         margin-bottom: 20px !important;
-    }
-    .product-item .down-content h6 {
-        position: absolute !important;
-        top: 30px !important;
-        right: 30px !important;
-    }
+    } */
     .product-item .down-content span {
         position: absolute !important;
         right: 30px !important;
@@ -1016,14 +1004,13 @@ footer .inner-content p a {
     .navbar .navbar-nav .show > .nav-link {
         border-bottom: none !important;
     }
-    .product-item .down-content h4 {
+    /* .product-item .down-content h4 {
         margin-bottom: 10px;
-    }
+    } */
     .product-item .down-content h6 {
         position: relative;
         top: 0;
         right: 0;
-        margin-bottom: 20px;
     }
     .product-item .down-content span {
         position: relative;
