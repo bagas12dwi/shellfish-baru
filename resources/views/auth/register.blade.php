@@ -78,7 +78,7 @@
             </div>
             <div class="col-md-4 p-3 d-flex align-items-center">
                 <div class="row">
-                    <img src="/assets/images/sellfish-logo.png" alt="">
+                    <img src="/public/assets/images/sellfish-logo.png" alt="">
                     <p class="text-center">Beli kebutuhan seafood hanya di Shellfish Daftar dan dapatkan kemudahan bertransaksi di Shellfish sekarang juga.</p>
                     <a href="{{ route('login') }}" class="btn btn-primary mt-3 mx-auto" style="width: 50%">Masuk</a>
                 </div>

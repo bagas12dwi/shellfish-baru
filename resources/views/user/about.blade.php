@@ -35,7 +35,7 @@
             </div>
           </div>
           <div class="col-md-4 my-auto">
-              <img src="assets/images/sellfish-logo.png" alt="">
+              <img src="public/assets/images/sellfish-logo.png" alt="">
           </div>
           <div class="col-md-6 my-auto">
             <div class="left-content">

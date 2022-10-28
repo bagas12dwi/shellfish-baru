@@ -46,15 +46,6 @@ ul {
   }
   
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    margin: 0px;
-}
-
 ul.social-icons li {
     display: inline-block;
     margin-right: 3px;
@@ -425,7 +416,6 @@ header .navbar {
 }
 
 .product-item .down-content {
-    padding: 30px;
     position: relative;
 }
 
@@ -452,8 +442,6 @@ header .navbar {
 
 .product-item .down-content span {
     position: absolute;
-    right: 30px;
-    bottom: 30px;
     font-size: 13px;
     font-weight: 500;
 }
@@ -660,7 +648,6 @@ footer .inner-content p a {
 }
 
 .team-member .down-content {
-    padding: 30px;
     text-align: center;
 }
 
@@ -933,8 +920,6 @@ footer .inner-content p a {
     } */
     .product-item .down-content span {
         position: absolute !important;
-        right: 30px !important;
-        bottom: 30px !important;
     }
     .best-features .left-content {
         margin-bottom: 30px;
@@ -1009,12 +994,8 @@ footer .inner-content p a {
     } */
     .product-item .down-content h6 {
         position: relative;
-        top: 0;
-        right: 0;
     }
     .product-item .down-content span {
         position: relative;
-        right: 0;
-        bottom: 0;
     }
 }

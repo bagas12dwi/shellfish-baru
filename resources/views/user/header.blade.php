@@ -16,7 +16,7 @@
     <div class="banner header-text">
         <div class="banner-item-01">
             <div class="text-content">
-              <h2 class="text-uppercase fw-bold">Sellfish</h2>
+              <h2 class="text-uppercase fw-bold">Shellfish</h2>
               <h4>Dapatkan produk ikan, kerang-kerangan, udang, oyster, kepiting & lobster secara segar langsung dari nelayan lokal</h4>
               <a href="{{ url('viewproducts') }}" class="btn btn-dark p-3 mt-3">Belanja Sekarang</a>
             </div>

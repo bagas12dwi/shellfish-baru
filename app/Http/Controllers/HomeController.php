@@ -19,13 +19,10 @@ class HomeController extends Controller
     {
         $usertype = Auth::user()->usertype;
 
-        if($usertype=='1')
-        {
+        if ($usertype == '1') {
             return view('admin.home');
-        } 
-        else 
-        {
-            $data = Product::latest()->limit(6)->get();
+        } else {
+            $data = Product::latest()->limit(8)->get();
 
             $user = auth()->user();
 
@@ -35,66 +32,59 @@ class HomeController extends Controller
 
             $articles = Article::latest()->limit(3)->get();
 
-            $title = 'SeaShrimps - Website';
+            $title = 'Shellfish - Website';
 
             return view('user.home', compact('data', 'count', 'categoryproduct', 'articles', 'title'));
         }
     }
 
     public function index()
-    {   
-        if(Auth::id())
-        {
+    {
+        if (Auth::id()) {
             return redirect('redirect');
-        }
-        else
-        {
+        } else {
             $data = Product::latest()->limit(6)->get();
-            
+
             $categoryproduct = Category::all();
 
             $articles = Article::latest()->limit(3)->get();
 
-            $title = 'SeaShrimps - Website';
-            
+            $title = 'Shellfish - Website';
+
             return view('user.home', compact('data', 'categoryproduct', 'articles', 'title'));
         }
     }
 
     public function search(Request $request)
-    {  
-        if(Auth::id())
-        {
+    {
+        if (Auth::id()) {
             $search = $request->search;
 
-            $data = Product::where('title', 'Like', '%'.$search.'%')->get();
+            $data = Product::where('title', 'Like', '%' . $search . '%')->get();
 
             $user = auth()->user();
 
             $count = Cart::where('phone', $user->phone)->count();
 
-            $title = 'SeaShrimps - Search';
+            $title = 'Shellfish - Search';
 
             return  view('user.searchproducts', compact('data', 'search', 'count', 'title'));
-        }
-        else
-        {
+        } else {
             $search = $request->search;
 
-            $data = Product::where('title', 'Like', '%'.$search.'%')->get();
+            $data = Product::where('title', 'Like', '%' . $search . '%')->get();
 
-            $title = 'SeaShrimps - Search';
+            $title = 'Shellfish - Search';
 
             return  view('user.searchproducts', compact('data', 'search', 'title'));
-        }     
+        }
     }
 
     public function addcart(Request $request, $id)
     {
-        if(Auth::id())
-        {
+        if (Auth::id()) {
             $user = auth()->user();
-            
+
             $product = Product::find($id);
 
             $cart = new Cart;
@@ -106,21 +96,18 @@ class HomeController extends Controller
             $cart->price = $product->price;
             $cart->quantity = $request->quantity;
             $cart->save();
-            
+
             return redirect()->back()->with('message', 'Product Added on Cart Successfully');
-        }
-        else
-        {
+        } else {
             return redirect('login');
         }
     }
 
     public function addshowcart(Request $request, $id)
     {
-        if(Auth::id())
-        {
+        if (Auth::id()) {
             $user = auth()->user();
-            
+
             $product = Product::find($id);
 
             $cart = new Cart;
@@ -132,11 +119,9 @@ class HomeController extends Controller
             $cart->price = $product->price;
             $cart->quantity = $request->quantity;
             $cart->save();
-            
+
             return redirect('showcart');
-        }
-        else
-        {
+        } else {
             return redirect('login');
         }
     }
@@ -156,8 +141,7 @@ class HomeController extends Controller
 
     public function viewproducts()
     {
-        if(Auth::id())
-        {
+        if (Auth::id()) {
             $data = Product::all();
 
             $user = auth()->user();
@@ -167,21 +151,18 @@ class HomeController extends Controller
             $title = 'Sellfish - Products';
 
             return view('user.viewproducts', compact('data', 'count', 'title'));
-        }
-        else
-        {
+        } else {
             $data = Product::all();
 
             $title = 'Sellfish - Products';
 
             return view('user.viewproducts', compact('data', 'title'));
-        }     
+        }
     }
 
     public function category(Category $category)
     {
-        if(Auth::id())
-        {
+        if (Auth::id()) {
             $categoryproduct = Category::all();
 
             $user = auth()->user();
@@ -191,31 +172,26 @@ class HomeController extends Controller
             $title = 'Category Product - SeaShrimps';
 
             return view('user.categories', ['category' => $category->products], compact('categoryproduct', 'count', 'title'));
-        } 
-        else
-        {
-            $categoryproduct = Category::all(); 
-            
+        } else {
+            $categoryproduct = Category::all();
+
             $title = 'Category Product - SeaShrimps';
 
-            return view('user.categories', ['category' => $category->products], compact('categoryproduct', 'title'));   
+            return view('user.categories', ['category' => $category->products], compact('categoryproduct', 'title'));
         }
     }
 
     public function viewarticle(Article $article)
     {
-        if(Auth::id())
-        {
+        if (Auth::id()) {
             $title = "Article - SeaShrimps";
 
             $user = auth()->user();
 
             $count = Cart::where('phone', $user->phone)->count();
 
-            return view('user.viewarticle', compact('title', 'count'), ['article' => $article]);            
-        }
-        else
-        {
+            return view('user.viewarticle', compact('title', 'count'), ['article' => $article]);
+        } else {
             $title = "Article - SeaShrimps";
 
             return view('user.viewarticle', compact('title'), ['article' => $article]);
@@ -224,40 +200,33 @@ class HomeController extends Controller
 
     public function about()
     {
-        if(Auth::id())
-        {
-            $title = 'About us - SeaShrimps';
+        if (Auth::id()) {
+            $title = 'Shellfish - About Us';
 
             $user = auth()->user();
 
             $count = Cart::where('phone', $user->phone)->count();
 
             return view('user.about', compact('title', 'count'));
+        } else {
         }
-        else
-        {
-
-        }
-        $title = 'About us - SeaShrimps';
+        $title = 'Shellfish - About Us';
 
         return view('user.about', compact('title'));
     }
 
     public function contact()
     {
-        if(Auth::id())
-        {
-            $title = 'Contact us - SeaShrimps';
+        if (Auth::id()) {
+            $title = 'Shellfish - Contact Us';
 
             $user = auth()->user();
 
             $count = Cart::where('phone', $user->phone)->count();
 
             return view('user.contact', compact('title', 'count'));
-        }
-        else
-        {
-            $title = 'Contact us - SeaShrimps';
+        } else {
+            $title = 'Shellfish - Contact Us';
 
             return view('user.contact', compact('title'));
         }
@@ -279,9 +248,11 @@ class HomeController extends Controller
         $name = $user->name;
         $phone = $user->phone;
         $address = $user->address;
+        $img = $request->file('bukti')->getClientOriginalName();
 
-        foreach($request->productname as $key=>$product)
-        {
+        $request->file('bukti')->storeAs('public/bukti-bayar', $img);
+
+        foreach ($request->productname as $key => $product) {
             $order = new Order;
 
             $order->product_name = $request->productname[$key];
@@ -289,6 +260,7 @@ class HomeController extends Controller
             $order->price = $request->price[$key];
 
             $order->name = $name;
+            $order->bukti_transfer = $img;
             $order->phone = $phone;
             $order->address = $address;
 
@@ -297,13 +269,12 @@ class HomeController extends Controller
             $order->save();
         }
         DB::table('carts')->where('phone', $phone)->delete();
-        return redirect()->back()->with('message', 'Product Checkout Successfully');
+        return redirect()->intended('/showcart')->with('message', 'Product Checkout Successfully');
     }
 
     public function detailproduct($id)
     {
-        if(Auth::id())
-        {
+        if (Auth::id()) {
             $data = Product::where('id', $id)->get();
 
             $products = Product::latest()->limit(3)->get();
@@ -315,23 +286,20 @@ class HomeController extends Controller
             $count = Cart::where('phone', $user->phone)->count();
 
             return view('user.detailproduct', compact('data', 'title', 'products', 'count'));
-        }
-        else
-        {
+        } else {
             $data = Product::where('id', $id)->get();
 
             $products = Product::latest()->limit(3)->get();
-    
+
             $title = 'Detail Product';
-    
+
             return view('user.detailproduct', compact('data', 'title', 'products'));
         }
     }
 
     public function articles()
     {
-        if(Auth::id())
-        {
+        if (Auth::id()) {
             $title = 'Articles - SeaShrimps';
 
             $user = auth()->user();
@@ -341,9 +309,7 @@ class HomeController extends Controller
             $articles = Article::all();
 
             return view('user.articles', compact('count', 'title', 'articles'));
-        }
-        else
-        {
+        } else {
             $title = 'Articles - SeaShrimps';
 
             $articles = Article::all();

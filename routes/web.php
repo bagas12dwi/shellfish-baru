@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\OrderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -70,3 +71,5 @@ Route::get('/contact', [HomeController::class, 'contact']);
 Route::get('/delete/{id}', [HomeController::class, 'deletecart']);
 
 Route::post('/orders', [HomeController::class, 'checkout']);
+
+Route::get('/checkout', [OrderController::class, 'index']);
